@@ -41,6 +41,11 @@ def is_Victory(icon):
         return True
     else:
         return False
+def is_draw():
+    if "   " not in board:
+        return True
+    else:
+        return False
 
 
 while True:
@@ -50,9 +55,16 @@ while True:
     if is_Victory(" X "):
         print("{} Wins!! Congratulations!".format(P1))
         break
+    elif is_draw():
+        print("Its Draw")
+        break
 
     player_move(" O ")
     print_board()
     if is_Victory(" O "):
         print("{} Wins!! Congratulations!".format(P2))
         break
+    elif is_draw():
+        print("Its Draw")
+        break
+
